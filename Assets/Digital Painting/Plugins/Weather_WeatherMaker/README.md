@@ -1,0 +1,10 @@
+﻿# Weather Maker Plugin
+
+Digital Ruby's Weather Maker asset is a wonderful asset that delivers many features. This plugin provides your Digital Painting with support for these features, including a Day Night Cycle and complete Weather system with sky.
+
+## Installation
+
+  1. Open your Digital Painting project
+  2. Purchase and import the Weather Maker Asset
+  3. Import the Weather Maker Plugin
+  4. Drag the `Assets/Digital Painting/Plugins/Weather_WeatherMaker/Prefab/WeatherMakerPrefab` into your scene
