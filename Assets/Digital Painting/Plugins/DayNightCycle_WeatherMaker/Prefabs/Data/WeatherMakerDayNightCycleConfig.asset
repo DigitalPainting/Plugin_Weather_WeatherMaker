@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Name: WeatherMakerDayNightCycleConfig
   m_EditorClassIdentifier: 
   dayCycleInMinutes: 1
-  sunPrefab: {fileID: 0}
-  skyboxMaterial: {fileID: 2100000, guid: 4074ef2f68c9e1e4ebeb126f0af53116, type: 2}
+  sunPrefab: {fileID: 108381270876690732, guid: 41a8cb55574a39644aba180d8f74c0fb,
+    type: 2}
+  skyboxMaterial: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
+  WeatherMakerScriptPrefab: {fileID: 114089651957380614, guid: c7d6e03790a6f524b8d78639de20decb,
+    type: 2}
+  DayNightPrefab: {fileID: 114054347293457268, guid: 9df458bf41a7442459c003ba551c9d20,
+    type: 2}
   weatherMakerProfile: {fileID: 11400000, guid: 49e3956622eccc1429c4eb5f4ca1ab52,
     type: 2}

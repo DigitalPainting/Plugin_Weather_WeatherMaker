@@ -11,8 +11,15 @@ namespace wizardscode.environment.WeatherMaker
     public class WeatherMakerDayNightCycle : AbstractDayNightCycle
     {
         [Header("Weather Maker Day Night")]
+        [Tooltip("The Weather Maker Script prefab to use to add the WeatherMaker scripts.")]
+        public WeatherMakerScript WeatherMakerScriptPrefab;
+        [Tooltip("The Weather Maker (Day Night Cycle) prefab that adds the Day Night controllers.")]
+        public WeatherMakerDayNightCycleManagerScript DayNightPrefab;
         [Tooltip("The Weather Maker Profile to use")]
         public WeatherMakerDayNightCycleProfileScript weatherMakerProfile;
+
+        private GameObject weatherMakerScript;
+        private GameObject dayNight;
         
         internal override float GetTime()
         {
@@ -21,13 +28,32 @@ namespace wizardscode.environment.WeatherMaker
 
         internal override void Initialize(float startTime)
         {
-            base.Initialize(startTime);
-
-            if (WeatherMakerDayNightCycleManagerScript.Instance == null)
+            if (WeatherMakerScriptPrefab == null)
             {
-                Debug.LogError("Cannot find the Weather Maker Manager Script, please place the `WeatherMakerPrefab` into your scene. See the `DigitalPaintingIntegrations/README.md` for more details.");
+                Debug.LogError("You have not defined a WeatherMakerScript in the WeatherMakerDayNightCycleConfig. There is a sample provided in the `Common/Prefabs` folder of this plugin.");
             }
+
+            WeatherMakerScript component = GameObject.FindObjectOfType<WeatherMakerScript>();
+            if ( component == null)
+            {
+                weatherMakerScript = Instantiate(WeatherMakerScriptPrefab.gameObject);
+                weatherMakerScript.name = "Weather Maker";
+            } else
+            {
+                weatherMakerScript = component.gameObject;
+            }
+
+            if (DayNightPrefab == null)
+            {
+                Debug.LogError("You have not defined a DayNightPrefab in the WeatherMakerDayNightCycleConfig. There is a sample provided in the Prefabs folder of this plugin.");
+            }
+            dayNight = Instantiate(DayNightPrefab.gameObject);
+            dayNight.name = "Day Night Cycle";
+            dayNight.transform.parent = weatherMakerScript.transform;
+
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
+
+            base.Initialize(startTime);
         }
 
         internal override void InitializeCamera()
@@ -46,13 +72,18 @@ namespace wizardscode.environment.WeatherMaker
 
         internal override void InitializeSun()
         {
-            if (Sun == null)
+            GameObject go = GameObject.Find("Sun");
+            if (go == null)
             {
-                Sun = GameObject.Find("Sun").GetComponent<Light>();
+                go = Instantiate(sunPrefab.gameObject);
+                go.name = "Sun";
             }
+
+            Sun = go.GetComponent<Light>();
+
             if (Sun == null)
             {
-                Debug.LogError("Cannot find the sun, please set it in the WeatherMakerDayNightCycle configuration");
+                Debug.LogError("Cannot find the sun, you need to set a prefab in the WeatherMakerDayNightCycleConfig. There is a suitable prefab in the prefabs folder of the WeatherMakerDayNightCycle plugin,");
             }
         }
 

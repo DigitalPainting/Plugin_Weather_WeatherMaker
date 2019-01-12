@@ -35,6 +35,10 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# First Party Assets
+Assets/Digital Painting/*
+!Assets/Digital Painting/Plugins
+
 # 3rd Party Assets
 Assets/Standard Assets.meta
 Assets/Standard Assets/
