@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Name: WeatherMakerWeatherSystem
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
-  isAuto: 1
   WeatherMakerScriptPrefab: {fileID: 1562172912819060, guid: 49f221c70ee583246a9e8375a90a7d74,
     type: 2}
-  UpdateInterval: 15
   clearProfile: {fileID: 11400000, guid: 5735a14d9dca55d4a8a67186abe9bf2a, type: 2}
   rainProfile: {fileID: 11400000, guid: ceb9d13b7427d6a428841b6580eaa1aa, type: 2}
   snowProfile: {fileID: 11400000, guid: 1987f67a1ab9d574e9dcfb3b30d16bce, type: 2}
-  sleetProfile: {fileID: 0}
-  hailProfile: {fileID: 0}
+  sleetProfile: {fileID: 11400000, guid: 827ff530f97f2ed4684e505e78c9058a, type: 2}
+  hailProfile: {fileID: 11400000, guid: 64d26dbd2a60cc341ba4d7aba2fc840d, type: 2}

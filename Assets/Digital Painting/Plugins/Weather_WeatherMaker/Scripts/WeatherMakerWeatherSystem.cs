@@ -11,8 +11,6 @@ namespace wizardscode.environment.weather
         [Header("Digital Ruby's Weather Maker")]
         [Tooltip("The Weather Maker Script prefab to use to add the WeatherMaker scripts.")]
         public GameObject WeatherMakerScriptPrefab;
-        [Tooltip("Interval between weather updates in seconds.")]
-        public float UpdateInterval = 2;
 
         [Header("Base Profiles for Weather Maker")]
         [Tooltip("Profile for a clear weather.")]
@@ -95,36 +93,35 @@ namespace wizardscode.environment.weather
 
         internal override void Update()
         {
-            timeToNextUpdate -= Time.deltaTime;
-
-            if (timeToNextUpdate > 0)
+            if (CurrentProfile.isDirty)
             {
-                return;
-            }
-            timeToNextUpdate = UpdateInterval;
-
-            float change;
-            if (Random.value > 0.5)
-            {
-                change = Random.value * 25;
-            }
-            else
-            {
-                change = -Random.value * 25;
-            }
-
-            if (CurrentProfile.precipitationIntensity == 0)
-            {
-                if (CurrentWeatherMakerProfile != clearProfile)
+                switch (CurrentProfile.PrecipitationType)
                 {
-                    ChangeWeather(clearProfile);
+                    case WeatherProfile.PrecipitationTypeEnum.Clear:
+                        ChangeWeather(clearProfile);
+                        break;
+                    case WeatherProfile.PrecipitationTypeEnum.Rain:
+                        rainProfile.PrecipitationProfile.IntensityRange = new RangeOfFloats(CurrentProfile.PrecipitationIntensity * 0.8f, CurrentProfile.PrecipitationIntensity);
+                        ChangeWeather(rainProfile);
+                        break;
+                    case WeatherProfile.PrecipitationTypeEnum.Hail:
+                        rainProfile.PrecipitationProfile.IntensityRange = new RangeOfFloats(CurrentProfile.PrecipitationIntensity * 0.8f, CurrentProfile.PrecipitationIntensity);
+                        ChangeWeather(hailProfile);
+                        break;
+                    case WeatherProfile.PrecipitationTypeEnum.Sleet:
+                        rainProfile.PrecipitationProfile.IntensityRange = new RangeOfFloats(CurrentProfile.PrecipitationIntensity * 0.8f, CurrentProfile.PrecipitationIntensity);
+                        ChangeWeather(sleetProfile);
+                        break;
+                    case WeatherProfile.PrecipitationTypeEnum.Snow:
+                        rainProfile.PrecipitationProfile.IntensityRange = new RangeOfFloats(CurrentProfile.PrecipitationIntensity * 0.8f, CurrentProfile.PrecipitationIntensity);
+                        ChangeWeather(snowProfile);
+                        break;
+                    default:
+                        Debug.LogError("WeatherMakerWeatherSystem does not know how to handle precipitation type '" + CurrentProfile.PrecipitationType + "' using clear profile");
+                        ChangeWeather(clearProfile);
+                        break;
                 }
-            } else
-            {
-                if (CurrentWeatherMakerProfile != rainProfile)
-                {
-                    ChangeWeather(rainProfile);
-                }
+                CurrentProfile.isDirty = false;
             }
         }
 
@@ -137,7 +134,9 @@ namespace wizardscode.environment.weather
             else
             {
                 WeatherMakerProfileScript lastProfile = CurrentWeatherMakerProfile;
-                WeatherMakerScript.Instance.RaiseWeatherProfileChanged(lastProfile, newProfile, 20, UnityEngine.Random.value * 20 + 10, true, null);
+                CurrentWeatherMakerProfile = newProfile;
+                FindObjectOfType<WeatherMakerWeatherZoneScript>().SingleProfile = newProfile;
+                //WeatherMakerScript.Instance.RaiseWeatherProfileChanged(lastProfile, newProfile, 20, UnityEngine.Random.value * 20 + 10, true, null);
             }
         }
     }

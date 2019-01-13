@@ -553,7 +553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1680698259403232
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,8 +844,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145806321490124}
   m_LocalRotation: {x: 0.0845486, y: 0.91489446, z: -0.29530963, w: 0.26193875}
-  m_LocalPosition: {x: -2466.7566, y: 3372.005, z: 3971.2947}
-  m_LocalScale: {x: 7200, y: 7200, z: 7200}
+  m_LocalPosition: {x: -40720.754, y: 55724.133, z: 65741.91}
+  m_LocalScale: {x: 119053.28, y: 119053.28, z: 119053.28}
   m_Children: []
   m_Father: {fileID: 4909604525455824}
   m_RootOrder: 0
@@ -896,8 +896,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1529575849456664}
   m_LocalRotation: {x: -0.16386162, y: 0.29186448, z: 0.050826866, w: 0.94094694}
-  m_LocalPosition: {x: -7356.3364, y: -4668.619, z: -10720.105}
-  m_LocalScale: {x: 576, y: 576, z: 576}
+  m_LocalPosition: {x: -121570.83, y: -77229.016, z: -177183}
+  m_LocalScale: {x: 9524.263, y: 9524.263, z: 9524.263}
   m_Children: []
   m_Father: {fileID: 4909604525455824}
   m_RootOrder: 1
@@ -1280,8 +1280,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1697250135797788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.337243, y: 4.4360695, z: 6.3372436}
-  m_LocalScale: {x: 14400, y: 14400, z: 14400}
+  m_LocalPosition: {x: 172.29184, y: 40.78067, z: 180.6287}
+  m_LocalScale: {x: 238106.56, y: 238106.56, z: 238106.56}
   m_Children: []
   m_Father: {fileID: 4179963683437128}
   m_RootOrder: 4
@@ -3229,13 +3229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraType: 0
-  AllowCameras: []
+  AllowCameras:
+  - {fileID: 0}
   AllowCamerasNames: []
   InstanceIsServer: 1
   InstanceClientId: 
   _PerformanceProfile: {fileID: 0}
-  DownsampleDepthMaterial: {fileID: 2100000, guid: 88c5cc03b606daa44843b519d8c16326,
-    type: 2}
 --- !u!114 &114383208436369284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3755,8 +3754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b90c9d832a94c94981743436b65f8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProfileGroup: {fileID: 11400000, guid: 926503a315dbbfa46b363ceb1366ca70, type: 2}
-  SingleProfile: {fileID: 0}
+  ProfileGroup: {fileID: 0}
+  SingleProfile: {fileID: 11400000, guid: 5735a14d9dca55d4a8a67186abe9bf2a, type: 2}
   TransitionDurationMultiplier: 0.5
   CloudProfile: {fileID: 0}
   PrecipitationProfile: {fileID: 0}
@@ -3781,6 +3780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5fbbc9ad7e64f46aae2fe2c4fc6c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DownsampleDepthMaterial: {fileID: 2100000, guid: 88c5cc03b606daa44843b519d8c16326,
+    type: 2}
 --- !u!123 &123151384645995988
 LensFlare:
   m_ObjectHideFlags: 1

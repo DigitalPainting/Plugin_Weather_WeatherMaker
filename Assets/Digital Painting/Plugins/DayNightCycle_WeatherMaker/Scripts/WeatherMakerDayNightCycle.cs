@@ -60,7 +60,7 @@ namespace wizardscode.environment.WeatherMaker
 
         internal override void InitializeCamera()
         {
-            Camera.main.farClipPlane = 2500;
+            Camera.main.farClipPlane = 10000;
             Camera.main.renderingPath = RenderingPath.DeferredLighting;
             Camera.main.allowHDR = true;
             Camera.main.allowMSAA = false;
