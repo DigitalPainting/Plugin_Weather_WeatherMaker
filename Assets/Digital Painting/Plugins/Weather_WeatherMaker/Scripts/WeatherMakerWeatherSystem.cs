@@ -63,7 +63,7 @@ namespace wizardscode.environment.weather
             
             DontDestroyOnLoad(weatherMaker);
 
-            SetupCamera();
+            //SetupCamera();
 
             // Since we've changed the config of the weather maker manager we need to trigger the OnEnable method so that it re-initializes
             weatherMaker.SetActive(false);
@@ -135,8 +135,7 @@ namespace wizardscode.environment.weather
             {
                 WeatherMakerProfileScript lastProfile = CurrentWeatherMakerProfile;
                 CurrentWeatherMakerProfile = newProfile;
-                FindObjectOfType<WeatherMakerWeatherZoneScript>().SingleProfile = newProfile;
-                //WeatherMakerScript.Instance.RaiseWeatherProfileChanged(lastProfile, newProfile, 20, UnityEngine.Random.value * 20 + 10, true, null);
+                WeatherMakerScript.Instance.RaiseWeatherProfileChanged(lastProfile, newProfile, 20, UnityEngine.Random.value * 20 + 10, true, null);
             }
         }
     }
