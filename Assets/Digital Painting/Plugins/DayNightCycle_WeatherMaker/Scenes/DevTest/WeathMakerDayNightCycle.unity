@@ -888,7 +888,18 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: a7c6f71f175a0634dbfd4ee7d73558a3,
         type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 114805408651030032, guid: 892bb710e0f33aa468c5f743c6ab07dc,
+        type: 2}
+      propertyPath: configuration
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b4533fed0ddbe2428b71b0c2e37bee2,
+        type: 2}
+    - target: {fileID: 1163264246283250, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114805408651030032, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1944589116

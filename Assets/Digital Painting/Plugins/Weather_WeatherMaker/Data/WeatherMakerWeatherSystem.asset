@@ -13,25 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
   isAuto: 1
-  precipitationType: 1
-  precipitationIntensity: 73.57143
-  cloudType: 0
-  cloudIntensity: 0
-  WeatherMakerScriptPrefab: {fileID: 114089651957380614, guid: c7d6e03790a6f524b8d78639de20decb,
+  WeatherMakerScriptPrefab: {fileID: 1562172912819060, guid: 49f221c70ee583246a9e8375a90a7d74,
     type: 2}
   UpdateInterval: 15
-  AudioManagerPrefab: {fileID: 114726888530671264, guid: 2f322bda94a55d046aeb23896bf39894,
-    type: 2}
-  FullScreenEffectsPrefab: {fileID: 114428330723385256, guid: cb65846d0bc60b648a4d971c9cf887ab,
-    type: 2}
-  GlobalWeatherZonePrefab: {fileID: 114020285666545986, guid: 7fb7d438575fb6f4892503aedab2245d,
-    type: 2}
-  PrecipitationManagerPrefab: {fileID: 114516897741215896, guid: 8e09fb2f4d392d34bb6fc7a0985f3e41,
-    type: 2}
-  SkySpherePrefab: {fileID: 114206611228315200, guid: d2d3f8a8c3dc1f941853be13fac8c6b2,
-    type: 2}
-  WindManagerPrefab: {fileID: 114158639143206786, guid: a001b921c5a0f6243b92b90ac1f8c829,
-    type: 2}
   clearProfile: {fileID: 11400000, guid: 5735a14d9dca55d4a8a67186abe9bf2a, type: 2}
   rainProfile: {fileID: 11400000, guid: ceb9d13b7427d6a428841b6580eaa1aa, type: 2}
   snowProfile: {fileID: 11400000, guid: 1987f67a1ab9d574e9dcfb3b30d16bce, type: 2}

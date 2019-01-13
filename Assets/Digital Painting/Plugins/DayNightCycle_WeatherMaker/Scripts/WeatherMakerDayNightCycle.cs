@@ -12,9 +12,7 @@ namespace wizardscode.environment.WeatherMaker
     {
         [Header("Weather Maker Day Night")]
         [Tooltip("The Weather Maker Script prefab to use to add the WeatherMaker scripts.")]
-        public WeatherMakerScript WeatherMakerScriptPrefab;
-        [Tooltip("The Weather Maker (Day Night Cycle) prefab that adds the Day Night controllers.")]
-        public WeatherMakerDayNightCycleManagerScript DayNightPrefab;
+        public GameObject WeatherMakerScriptPrefab;
         [Tooltip("The Weather Maker Profile to use")]
         public WeatherMakerDayNightCycleProfileScript weatherMakerProfile;
 
@@ -41,15 +39,19 @@ namespace wizardscode.environment.WeatherMaker
             } else
             {
                 weatherMakerScript = component.gameObject;
+                // trigger OnEnable
+                weatherMakerScript.SetActive(false);
+                weatherMakerScript.SetActive(true);
             }
 
-            if (DayNightPrefab == null)
+            WeatherMakerDayNightCycleManagerScript dayNightScript = FindObjectOfType<WeatherMakerDayNightCycleManagerScript>();
+            if (dayNightScript == null)
             {
-                Debug.LogError("You have not defined a DayNightPrefab in the WeatherMakerDayNightCycleConfig. There is a sample provided in the Prefabs folder of this plugin.");
-            }
-            dayNight = Instantiate(DayNightPrefab.gameObject);
-            dayNight.name = "Day Night Cycle";
-            dayNight.transform.parent = weatherMakerScript.transform;
+                Debug.LogError("Cannot find an object with the `WeatherMakerDayNightCycle` attached.");
+            } else
+            {
+                dayNight = dayNightScript.gameObject;
+            }            
 
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
 

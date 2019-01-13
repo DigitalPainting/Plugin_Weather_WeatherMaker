@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.005
   m_LinearFogStart: 15
   m_LinearFogEnd: 350
-  m_AmbientSkyColor: {r: 0.004647059, g: 0.004670183, b: 0.008, a: 0.008}
-  m_AmbientEquatorColor: {r: 0.004647059, g: 0.004670183, b: 0.008, a: 0.008}
-  m_AmbientGroundColor: {r: 0.004647059, g: 0.004670183, b: 0.008, a: 0.008}
+  m_AmbientSkyColor: {r: 0.06960889, g: 0.06921411, b: 0.08096816, a: 0.1}
+  m_AmbientEquatorColor: {r: 0.09521041, g: 0.096823275, b: 0.079894945, a: 0.1}
+  m_AmbientGroundColor: {r: 0.09521041, g: 0.096823275, b: 0.079894945, a: 0.1}
   m_AmbientIntensity: 1.5
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -260,6 +260,12 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114805408651030032, guid: 892bb710e0f33aa468c5f743c6ab07dc,
+        type: 2}
+      propertyPath: configuration
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b4533fed0ddbe2428b71b0c2e37bee2,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
   m_IsPrefabAsset: 0
