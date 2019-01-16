@@ -18,11 +18,8 @@ namespace wizardscode.environment.WeatherMaker
 
         private GameObject weatherMakerScript;
         private GameObject dayNight;
-        
-        internal override float GetTime()
-        {
-            return WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay;
-        }
+        private float daySpeed;
+        private float nightSpeed;
 
         internal override void Initialize(float startTime)
         {
@@ -90,11 +87,10 @@ namespace wizardscode.environment.WeatherMaker
         internal override void InitializeTiming()
         {
             WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay = startTime;
-            float daySpeed = 1440 / dayCycleInMinutes;
-            float nightSpeed = daySpeed;
-
-            weatherMakerProfile.Speed = daySpeed;
-            weatherMakerProfile.NightSpeed = daySpeed;
+            daySpeed = 1440 / manager.DayCycleInMinutes;
+            WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
+            nightSpeed = daySpeed; // don't currently support separate day and night speeds
+            WeatherMakerDayNightCycleManagerScript.Instance.Speed = nightSpeed;
 
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile.UpdateFromProfile(true);
@@ -105,8 +101,26 @@ namespace wizardscode.environment.WeatherMaker
             WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay = timeInSeconds;
         }
 
+        internal override float GetTime()
+        {
+            return WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay;
+        }
+
         internal override void Update()
         {
+            daySpeed = 1440 / manager.DayCycleInMinutes;
+            nightSpeed = daySpeed; // don't currently support separate day and night speeds
+            if (daySpeed != 1440 / manager.DayCycleInMinutes)
+            {
+                weatherMakerProfile.Speed = daySpeed;
+                WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
+            }
+
+            if (nightSpeed != 1440 / manager.DayCycleInMinutes)
+            {
+                weatherMakerProfile.NightSpeed = nightSpeed;
+                WeatherMakerDayNightCycleManagerScript.Instance.NightSpeed = nightSpeed;
+            }
         }
     }
 }
