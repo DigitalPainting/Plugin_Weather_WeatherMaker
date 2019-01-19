@@ -87,7 +87,7 @@ namespace wizardscode.environment.WeatherMaker
         internal override void InitializeTiming()
         {
             WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay = startTime;
-            daySpeed = 1440 / manager.DayCycleInMinutes;
+            daySpeed = 1440 / dayCycleInMinutes;
             WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
             nightSpeed = daySpeed; // don't currently support separate day and night speeds
             WeatherMakerDayNightCycleManagerScript.Instance.Speed = nightSpeed;
@@ -108,15 +108,15 @@ namespace wizardscode.environment.WeatherMaker
 
         internal override void Update()
         {
-            daySpeed = 1440 / manager.DayCycleInMinutes;
+            daySpeed = 1440 / dayCycleInMinutes;
             nightSpeed = daySpeed; // don't currently support separate day and night speeds
-            if (daySpeed != 1440 / manager.DayCycleInMinutes)
+            if (daySpeed != 1440 / dayCycleInMinutes)
             {
                 weatherMakerProfile.Speed = daySpeed;
                 WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
             }
 
-            if (nightSpeed != 1440 / manager.DayCycleInMinutes)
+            if (nightSpeed != 1440 / dayCycleInMinutes)
             {
                 weatherMakerProfile.NightSpeed = nightSpeed;
                 WeatherMakerDayNightCycleManagerScript.Instance.NightSpeed = nightSpeed;
