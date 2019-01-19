@@ -1,6 +1,4 @@
 ﻿using DigitalRuby.WeatherMaker;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace wizardscode.environment.weather
@@ -13,6 +11,8 @@ namespace wizardscode.environment.weather
         public GameObject WeatherMakerScriptPrefab;
 
         [Header("Base Profiles for Weather Maker")]
+        [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
+        public WeatherMakerProfileGroupScript automatedGroupProfile;
         [Tooltip("Profile for a clear weather.")]
         public WeatherMakerProfileScript clearProfile;
         [Tooltip("Profile for rainy weather.")]
@@ -23,10 +23,14 @@ namespace wizardscode.environment.weather
         public WeatherMakerProfileScript sleetProfile;
         [Tooltip("Profile for hail.")]
         public WeatherMakerProfileScript hailProfile;
-        
+
+        private WeatherManager manager;
         private GameObject weatherMaker;
+        private WeatherMakerWeatherZoneScript zone;
+
         private GameObject weather;
         private float timeToNextUpdate;
+
         public WeatherMakerProfileScript CurrentWeatherMakerProfile
         {
             get; set;
@@ -45,6 +49,18 @@ namespace wizardscode.environment.weather
                 Debug.LogError("You have not defined a WeatherMakerScript in the WeatherMakerDayNightCycleConfig. There is a sample provided in the `Common/Prefabs` folder of this plugin.");
             }
 
+            manager = FindObjectOfType<WeatherManager>();
+            if (manager == null)
+            {
+                Debug.LogError("Cannot find Weather Manager.");
+            }
+
+            zone = FindObjectOfType<WeatherMakerWeatherZoneScript>();
+            if (zone == null)
+            {
+                Debug.LogError("Unable to fine a WeatherMakerWeatherZoneScript");
+            }
+
             WeatherMakerScript component = GameObject.FindObjectOfType<WeatherMakerScript>();
             if (component == null)
             {
@@ -60,21 +76,31 @@ namespace wizardscode.environment.weather
             {
                 Debug.LogError("Unable to find or instantiate an object with the WeatherMakerScript attached");
             }
-            
+
             DontDestroyOnLoad(weatherMaker);
 
-            //SetupCamera();
+            if (automatedGroupProfile != null)
+            {
+                zone.ProfileGroup = automatedGroupProfile;
+                zone.SingleProfile = null;
+                manager.isAuto = false;
+            }
+            
+            SetupCamera();
 
             // Since we've changed the config of the weather maker manager we need to trigger the OnEnable method so that it re-initializes
             weatherMaker.SetActive(false);
             weatherMaker.SetActive(true);
 
-            WeatherMakerScript.Instance.RaiseWeatherProfileChanged(null, clearProfile, 1, 200, true, null);
+            WeatherMakerScript.Instance.RaiseWeatherProfileChanged(null, clearProfile, 1, 20, true, null);
         }
 
         private void SetupCamera()
         {
-            Rigidbody rigidBody = Camera.main.gameObject.AddComponent<Rigidbody>();
+            Rigidbody rigidBody = Camera.main.GetComponent<Rigidbody>();
+            if (rigidBody == null) {
+                rigidBody = Camera.main.gameObject.AddComponent<Rigidbody>();
+            }
             rigidBody.useGravity = false;
             rigidBody.isKinematic = true;
 
@@ -83,7 +109,6 @@ namespace wizardscode.environment.weather
             collider.radius = 0.001f;
 
             Camera.main.gameObject.AddComponent<WeatherMakerSoundZoneScript>();
-
             Camera.main.clearFlags = CameraClearFlags.Color;
             Camera.main.backgroundColor = new Color(0, 0, 0, 0);
             Camera.main.farClipPlane = 10000;
@@ -121,6 +146,7 @@ namespace wizardscode.environment.weather
                         ChangeWeather(clearProfile);
                         break;
                 }
+
                 CurrentProfile.isDirty = false;
             }
         }
