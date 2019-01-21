@@ -6,15 +6,22 @@ public class WeatherMakerDayNightCyclePackageBuilder : PackageBuilder
     [MenuItem("Digital Painting/Build/Build Day Night Cycle (Weather Maker) Plugin")]
     new public static void Build()
     {
-        string rootDir = "Assets\\Digital Painting\\Plugins\\DayNightCycle_WeatherMaker";
+        string[] rootDirs = { "Assets\\Digital Painting\\Plugins\\DayNightCycle_WeatherMaker", "Assets\\Digital Painting\\Plugins\\WeatherMakerCommon" };
         string packageName = "DayNightCycle_WeatherMaker.unitypackage";
 
-        MoveExcludedFiles(rootDir);
+        foreach (string rootDir in rootDirs)
+        {
+            MoveExcludedFiles(rootDir);
+        }
 
-        AssetDatabase.ExportPackage(rootDir, packageName, ExportPackageOptions.Interactive | ExportPackageOptions.Recurse | ExportPackageOptions.IncludeDependencies );
+        AssetDatabase.ExportPackage(rootDirs, packageName, ExportPackageOptions.Interactive | ExportPackageOptions.Recurse );
         Debug.Log("Exported " + packageName);
 
-        RecoverExcludedFiles(rootDir);
+
+        foreach (string rootDir in rootDirs)
+        {
+            RecoverExcludedFiles(rootDir);
+        }
     }
 
 }
