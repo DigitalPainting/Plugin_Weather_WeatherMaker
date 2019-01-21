@@ -6,10 +6,6 @@ namespace wizardscode.environment.weather
     [CreateAssetMenu(fileName = "WeatherMakerWeatherSystem", menuName = "Wizards Code/Weather/Weather Maker")]
     public class WeatherMakerWeatherSystem : AbstractWeatherSystem
     {
-        [Header("Digital Ruby's Weather Maker")]
-        [Tooltip("The Weather Maker Script prefab to use to add the WeatherMaker scripts.")]
-        public GameObject WeatherMakerScriptPrefab;
-
         [Header("Base Profiles for Weather Maker")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
         public WeatherMakerProfileGroupScript automatedGroupProfile;
@@ -40,15 +36,12 @@ namespace wizardscode.environment.weather
         {
             RenderSettings.fog = false;
             RenderSettings.skybox = skyboxMaterial;
+
+
         }
 
         internal override void Start()
         {
-            if (WeatherMakerScriptPrefab == null)
-            {
-                Debug.LogError("You have not defined a WeatherMakerScript in the WeatherMakerDayNightCycleConfig. There is a sample provided in the `Common/Prefabs` folder of this plugin.");
-            }
-
             manager = FindObjectOfType<WeatherManager>();
             if (manager == null)
             {
@@ -61,11 +54,12 @@ namespace wizardscode.environment.weather
                 Debug.LogError("Unable to fine a WeatherMakerWeatherZoneScript");
             }
 
+
             WeatherMakerScript component = GameObject.FindObjectOfType<WeatherMakerScript>();
             if (component == null)
             {
-                weatherMaker = Instantiate(WeatherMakerScriptPrefab.gameObject);
-                weatherMaker.name = "Weather Maker";
+                Debug.LogError("You don't have a WeatherMakerScript in your scene. Please see the Weather Maker Weather System plugin README for instructions.");
+                return;
             }
             else
             {
@@ -85,35 +79,12 @@ namespace wizardscode.environment.weather
                 zone.SingleProfile = null;
                 manager.isAuto = false;
             }
-            
-            SetupCamera();
 
             // Since we've changed the config of the weather maker manager we need to trigger the OnEnable method so that it re-initializes
             weatherMaker.SetActive(false);
             weatherMaker.SetActive(true);
 
             WeatherMakerScript.Instance.RaiseWeatherProfileChanged(null, clearProfile, 1, 20, true, null);
-        }
-
-        private void SetupCamera()
-        {
-            Rigidbody rigidBody = Camera.main.GetComponent<Rigidbody>();
-            if (rigidBody == null) {
-                rigidBody = Camera.main.gameObject.AddComponent<Rigidbody>();
-            }
-            rigidBody.useGravity = false;
-            rigidBody.isKinematic = true;
-
-            SphereCollider collider = Camera.main.gameObject.AddComponent<SphereCollider>();
-            collider.isTrigger = true;
-            collider.radius = 0.001f;
-
-            Camera.main.gameObject.AddComponent<WeatherMakerSoundZoneScript>();
-            Camera.main.clearFlags = CameraClearFlags.Color;
-            Camera.main.backgroundColor = new Color(0, 0, 0, 0);
-            Camera.main.farClipPlane = 10000;
-
-            weatherMaker.GetComponent<WeatherMakerScript>().AllowCameras[0] = Camera.main;
         }
 
         internal override void Update()

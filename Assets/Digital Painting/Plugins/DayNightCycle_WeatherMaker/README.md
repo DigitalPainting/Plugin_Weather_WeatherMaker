@@ -6,7 +6,7 @@
 
 Add the `WeatherMakerCommon/Scenes/WeatherMakerCommon` scene as an additive scene.
 
-If you are only using the Day Night Cycle you can disable all the children except `DayNightCycle`, `SkySphere` and `LightManager` from the `WeatherMakerSystem` game object.
+If you are only using the Day Night Cycle (i.e. not using the Weather System plugin) you can disable all the children except `DayNightCycle`, `SkySphere` and `LightManager` from the `WeatherMakerSystem` game object.
 
 If you main scene already has a manager with a `DayNightCycle` and/or `WeatherSystem` component you should remove or disable these.
 
