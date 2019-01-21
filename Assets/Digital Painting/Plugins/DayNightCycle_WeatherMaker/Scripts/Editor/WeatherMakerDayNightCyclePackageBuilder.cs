@@ -7,7 +7,7 @@ public class WeatherMakerDayNightCyclePackageBuilder : PackageBuilder
     new public static void Build()
     {
         string[] rootDirs = { "Assets\\Digital Painting\\Plugins\\DayNightCycle_WeatherMaker", "Assets\\Digital Painting\\Plugins\\WeatherMakerCommon" };
-        string packageName = "DayNightCycle_WeatherMaker.unitypackage";
+        string packageName = @"..\DayNightCycle_WeatherMaker.unitypackage";
 
         foreach (string rootDir in rootDirs)
         {

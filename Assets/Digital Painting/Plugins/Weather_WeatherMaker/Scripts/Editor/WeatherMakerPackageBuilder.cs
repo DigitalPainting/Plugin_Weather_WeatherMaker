@@ -7,7 +7,7 @@ public class WeatherMakerPackageBuilder : PackageBuilder
     new public static void Build()
     {
         string[] rootDirs = { "Assets\\Digital Painting\\Plugins\\Weather_WeatherMaker", "Assets\\Digital Painting\\Plugins\\WeatherMakerCommon" };
-        string packageName = "Weather_WeatherMaker.unitypackage";
+        string packageName = @"..\Weather_WeatherMaker.unitypackage";
         
         foreach (string rootDir in rootDirs)
         {
