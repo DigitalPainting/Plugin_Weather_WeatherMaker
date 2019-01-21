@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77c3f1b7987964a829d15301f3c31d, type: 3}
   m_Name: WeatherMakerDayNightCycleConfig
   m_EditorClassIdentifier: 
-  dayCycleInMinutes: 30
+  dayCycleInMinutes: 3
   skybox: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
   sunPrefab: {fileID: 108381270876690732, guid: 41a8cb55574a39644aba180d8f74c0fb,
     type: 2}

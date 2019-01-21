@@ -11,9 +11,10 @@ public class WeatherMakerDayNightCyclePackageBuilder : PackageBuilder
 
         MoveExcludedFiles(rootDir);
 
-        AssetDatabase.ExportPackage(rootDir, packageName, ExportPackageOptions.Interactive | ExportPackageOptions.Recurse);
+        AssetDatabase.ExportPackage(rootDir, packageName, ExportPackageOptions.Interactive | ExportPackageOptions.Recurse | ExportPackageOptions.IncludeDependencies );
         Debug.Log("Exported " + packageName);
 
         RecoverExcludedFiles(rootDir);
     }
+
 }
