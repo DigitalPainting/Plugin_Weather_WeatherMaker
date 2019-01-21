@@ -61,10 +61,8 @@ namespace wizardscode.environment.WeatherMaker
 
         internal override void InitializeLighting()
         {
-            /*
-            RenderSettings.sun = Sun;
             RenderSettings.fog = false;
-            */
+            RenderSettings.skybox = skybox;
         }
 
         internal override void InitializeSun()
@@ -77,7 +75,6 @@ namespace wizardscode.environment.WeatherMaker
             }
 
             Sun = go.GetComponent<Light>();
-
             if (Sun == null)
             {
                 Debug.LogError("Cannot find the sun, you need to set a prefab in the WeatherMakerDayNightCycleConfig. There is a suitable prefab in the prefabs folder of the WeatherMakerDayNightCycle plugin,");
