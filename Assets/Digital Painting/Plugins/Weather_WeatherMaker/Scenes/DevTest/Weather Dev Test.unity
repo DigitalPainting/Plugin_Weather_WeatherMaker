@@ -292,7 +292,9 @@ Prefab:
       propertyPath: WeatherUpdateFrequency
       value: 30
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114104959585131336, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
+    - {fileID: 114805408651030032, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 892bb710e0f33aa468c5f743c6ab07dc, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2023246022

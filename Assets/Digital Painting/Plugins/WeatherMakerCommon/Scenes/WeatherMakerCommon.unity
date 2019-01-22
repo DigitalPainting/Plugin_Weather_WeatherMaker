@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 30000
-  dayCycleInMinutes: 3
+  dayCycleInMinutes: 10
   skybox: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
   sunPrefab: {fileID: 0}
   configuration: {fileID: 11400000, guid: a7c6f71f175a0634dbfd4ee7d73558a3, type: 2}
