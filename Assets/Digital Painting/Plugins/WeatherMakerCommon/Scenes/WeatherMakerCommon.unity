@@ -965,7 +965,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b734a48009a61b47aa78c2cb2073e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 18000
+  startTime: 30000
+  dayCycleInMinutes: 3
+  skybox: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
+  sunPrefab: {fileID: 0}
   configuration: {fileID: 11400000, guid: a7c6f71f175a0634dbfd4ee7d73558a3, type: 2}
 --- !u!4 &1651777378
 Transform:
@@ -1191,22 +1194,6 @@ Prefab:
     - target: {fileID: 4849826937429272, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849826937429272, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 10.990001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849826937429272, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 247.01999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849826937429272, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.0020001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1584894983665794, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef0907d022a3d944b14397983c7fa58, type: 2}
