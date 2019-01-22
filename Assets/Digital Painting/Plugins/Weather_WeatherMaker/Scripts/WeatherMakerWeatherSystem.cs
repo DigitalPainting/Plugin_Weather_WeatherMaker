@@ -26,6 +26,7 @@ namespace wizardscode.environment.weather
 
         private GameObject weather;
         private float timeToNextUpdate;
+        private DayNightCycleManager dayNightManager;
 
         public WeatherMakerProfileScript CurrentWeatherMakerProfile
         {
@@ -78,6 +79,21 @@ namespace wizardscode.environment.weather
                 zone.ProfileGroup = automatedGroupProfile;
                 zone.SingleProfile = null;
                 manager.isAuto = false;
+
+                float transisitonDuration = 15f;
+                float holdDuration = 20f;
+
+                dayNightManager = FindObjectOfType<DayNightCycleManager>();
+                if (dayNightManager != null)
+                {
+                    transisitonDuration = dayNightManager.GameSecondsToRealSeconds(120 * 60); // 2 hour game time
+                    holdDuration = dayNightManager.GameSecondsToRealSeconds(15 * 60); // 1/4 hour game time
+                }
+
+                automatedGroupProfile.TransitionDuration.Minimum = transisitonDuration * 0.75f;
+                automatedGroupProfile.TransitionDuration.Maximum = transisitonDuration * 1.25f;
+                automatedGroupProfile.HoldDuration.Minimum = holdDuration * 0.75f;
+                automatedGroupProfile.HoldDuration.Maximum = holdDuration * 1.25f;
             }
 
             // Since we've changed the config of the weather maker manager we need to trigger the OnEnable method so that it re-initializes
