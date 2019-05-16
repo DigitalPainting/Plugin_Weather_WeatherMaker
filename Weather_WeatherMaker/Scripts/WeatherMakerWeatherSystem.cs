@@ -26,7 +26,7 @@ namespace wizardscode.environment.weather
 
         private GameObject weather;
         private float timeToNextUpdate;
-        private DayNightCycleManager dayNightManager;
+        private DayNightPluginManager dayNightManager;
 
         public WeatherMakerProfileScript CurrentWeatherMakerProfile
         {
@@ -83,7 +83,7 @@ namespace wizardscode.environment.weather
                 float transisitonDuration = 15f;
                 float holdDuration = 20f;
 
-                dayNightManager = FindObjectOfType<DayNightCycleManager>();
+                dayNightManager = FindObjectOfType<DayNightPluginManager>();
                 if (dayNightManager != null)
                 {
                     transisitonDuration = dayNightManager.GameSecondsToRealSeconds(120 * 60); // 2 hour game time
