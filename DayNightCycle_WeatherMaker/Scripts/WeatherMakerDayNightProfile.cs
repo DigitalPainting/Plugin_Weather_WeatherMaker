@@ -8,7 +8,7 @@ using wizardscode.environment;
 namespace wizardscode.environment.WeatherMaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerDayNightCycleConfig", menuName = "Wizards Code/Day Night Cycle/Weather Maker Day Night Cycle Config")]
-    public class WeatherMakerDayNightCycle : AbstractDayNightProfile
+    public class WeatherMakerDayNightProfile : AbstractDayNightProfile
     {
         [Header("Configuration")]
         [Tooltip("The Weather Maker Profile to use")]
