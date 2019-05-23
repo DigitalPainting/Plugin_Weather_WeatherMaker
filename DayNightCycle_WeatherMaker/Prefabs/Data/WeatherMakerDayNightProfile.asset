@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77c3f1b7987964a829d15301f3c31d, type: 3}
   m_Name: WeatherMakerDayNightProfile
   m_EditorClassIdentifier: 
-  weatherMakerProfile: {fileID: 11400000, guid: ac359045507d8d844bb34152f1b61670,
+  skybox: {fileID: 2100000, guid: 4074ef2f68c9e1e4ebeb126f0af53116, type: 2}
+  sunPrefab: {fileID: 108792081150906930, guid: 935ed1b2f6a62904888782218dd03f07,
+    type: 3}
+  startTime: 18000
+  dayCycleInMinutes: 5
+  weatherMakerProfile: {fileID: 11400000, guid: 49e3956622eccc1429c4eb5f4ca1ab52,
     type: 2}

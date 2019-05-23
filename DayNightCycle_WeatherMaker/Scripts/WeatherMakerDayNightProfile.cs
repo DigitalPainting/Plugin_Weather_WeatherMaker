@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using wizardscode.environment;
+using wizardscode.editor;
+using wizardscode.plugin;
 
 namespace wizardscode.environment.WeatherMaker
 {
@@ -12,6 +13,7 @@ namespace wizardscode.environment.WeatherMaker
     {
         [Header("Configuration")]
         [Tooltip("The Weather Maker Profile to use")]
+        [Expandable(isRequired: true, isRequiredMessage: "Select or create a weather maker profile.")]
         public WeatherMakerDayNightCycleProfileScript weatherMakerProfile;
 
         private GameObject weatherMakerScript;
@@ -43,6 +45,28 @@ namespace wizardscode.environment.WeatherMaker
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
 
             base.Initialize();
+        }
+
+        public override List<ValidationObject> Validate()
+        {
+            List<ValidationObject> validations = base.Validate();
+
+            WeatherMakerScript wmScript = GameObject.FindObjectOfType<WeatherMakerScript>();
+            if (wmScript)
+            {
+                validations.Add(new ValidationObject("WeatherMakerScript is present in the scene", ValidationObject.Level.OK));
+            } else
+            {
+                validations.Add(new ValidationObject("WeatherMakerScript must be present in the root of your scene", ValidationObject.Level.Error, Configure));
+            }
+
+            return validations;
+        }
+
+        void Configure()
+        {
+            GameObject prefab = (GameObject)Resources.Load("WeatherMakerPrefab", typeof(GameObject));
+            Instantiate(prefab);
         }
 
         internal override void InitializeCamera()
