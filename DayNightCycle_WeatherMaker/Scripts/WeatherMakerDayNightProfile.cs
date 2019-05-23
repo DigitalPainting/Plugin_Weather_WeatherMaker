@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using wizardscode.editor;
 using wizardscode.plugin;
+using wizardscode.utility;
 
 namespace wizardscode.environment.WeatherMaker
 {
@@ -47,17 +48,17 @@ namespace wizardscode.environment.WeatherMaker
             base.Initialize();
         }
 
-        public override List<ValidationObject> Validate()
+        public override List<ValidationResult> Validate()
         {
-            List<ValidationObject> validations = base.Validate();
+            List<ValidationResult> validations = base.Validate();
 
             WeatherMakerScript wmScript = GameObject.FindObjectOfType<WeatherMakerScript>();
             if (wmScript)
             {
-                validations.Add(new ValidationObject("WeatherMakerScript is present in the scene", ValidationObject.Level.OK));
+                validations.Add(new ValidationResult("WeatherMakerScript is present in the scene", ValidationResult.Level.OK));
             } else
             {
-                validations.Add(new ValidationObject("WeatherMakerScript must be present in the root of your scene", ValidationObject.Level.Error, Configure));
+                validations.Add(new ValidationResult("WeatherMakerScript must be present in the root of your scene", ValidationResult.Level.Error, Configure));
             }
 
             return validations;
