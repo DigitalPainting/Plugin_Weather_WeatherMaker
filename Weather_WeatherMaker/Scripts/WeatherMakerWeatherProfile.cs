@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace wizardscode.environment.weather
 {
-    [CreateAssetMenu(fileName = "WeatherMakerWeatherSystem", menuName = "Wizards Code/Weather/Weather Maker")]
-    public class WeatherMakerWeatherSystem : AbstractWeatherSystem
+    [CreateAssetMenu(fileName = "WeatherMakerWeatherProfile", menuName = "Wizards Code/Weather/Weather Maker")]
+    public class WeatherMakerWeatherProfile : AbstractWeatherProfile
     {
         [Header("Base Profiles for Weather Maker")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
@@ -20,7 +20,7 @@ namespace wizardscode.environment.weather
         [Tooltip("Profile for hail.")]
         public WeatherMakerProfileScript hailProfile;
 
-        private WeatherManager manager;
+        private WeatherPluginManager manager;
         private GameObject weatherMaker;
         private WeatherMakerWeatherZoneScript zone;
 
@@ -43,7 +43,7 @@ namespace wizardscode.environment.weather
 
         internal override void Start()
         {
-            manager = FindObjectOfType<WeatherManager>();
+            manager = FindObjectOfType<WeatherPluginManager>();
             if (manager == null)
             {
                 Debug.LogError("Cannot find Weather Manager.");

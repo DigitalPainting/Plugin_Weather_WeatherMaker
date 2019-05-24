@@ -48,17 +48,17 @@ namespace wizardscode.environment.WeatherMaker
             base.Initialize();
         }
 
-        public override List<ValidationResult> Validate()
+        public override ValidationResultCollection Validate()
         {
-            List<ValidationResult> validations = base.Validate();
+            ValidationResultCollection validations = base.Validate();
 
             WeatherMakerScript wmScript = GameObject.FindObjectOfType<WeatherMakerScript>();
             if (wmScript)
             {
-                validations.Add(new ValidationResult("WeatherMakerScript is present in the scene", ValidationResult.Level.OK));
+                validations.AddOrUpdate(new ValidationResult("WeatherMakerScript is present in the scene", ValidationResult.Level.OK));
             } else
             {
-                validations.Add(new ValidationResult("WeatherMakerScript must be present in the root of your scene", ValidationResult.Level.Error, Configure));
+                validations.AddOrUpdate(new ValidationResult("WeatherMakerScript must be present in the root of your scene", ValidationResult.Level.Error, Configure));
             }
 
             return validations;
