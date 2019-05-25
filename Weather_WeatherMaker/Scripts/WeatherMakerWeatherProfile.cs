@@ -52,7 +52,7 @@ namespace wizardscode.environment.weathermaker
             zone = FindObjectOfType<WeatherMakerWeatherZoneScript>();
             if (zone == null)
             {
-                Debug.LogError("Unable to fine a WeatherMakerWeatherZoneScript");
+                Debug.LogError("Unable to find a WeatherMakerWeatherZoneScript");
             }
 
 
