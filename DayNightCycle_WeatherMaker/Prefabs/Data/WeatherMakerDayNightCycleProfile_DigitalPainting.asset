@@ -4,21 +4,22 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d4dbdbf04c6ebf4ab9bbaaea3ca6638, type: 3}
   m_Name: WeatherMakerDayNightCycleProfile_DigitalPainting
   m_EditorClassIdentifier: 
-  Speed: 48
-  NightSpeed: 48
+  Speed: 1440
+  NightSpeed: 1440
   UpdateInterval: 0
-  TimeOfDay: 36000.96
-  TimeOfDayLabel: 10:00 AM
+  TimeOfDay: 45963.875
+  TimeOfDayLabel: 12:44 PM
   Year: 2017
   Month: 3
-  Day: 12
+  Day: 13
   AdjustDateWhenDayEnds: 1
   TimeZoneOffsetSeconds: -21600
   Latitude: 44

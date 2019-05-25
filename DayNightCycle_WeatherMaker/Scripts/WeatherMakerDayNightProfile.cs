@@ -7,7 +7,7 @@ using wizardscode.editor;
 using wizardscode.plugin;
 using wizardscode.utility;
 
-namespace wizardscode.environment.WeatherMaker
+namespace wizardscode.environment.weathermaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerDayNightCycleConfig", menuName = "Wizards Code/Day Night Cycle/Weather Maker Day Night Cycle Config")]
     public class WeatherMakerDayNightProfile : AbstractDayNightProfile
@@ -46,28 +46,6 @@ namespace wizardscode.environment.WeatherMaker
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
 
             base.Initialize();
-        }
-
-        public override ValidationResultCollection Validate()
-        {
-            ValidationResultCollection validations = base.Validate();
-
-            WeatherMakerScript wmScript = GameObject.FindObjectOfType<WeatherMakerScript>();
-            if (wmScript)
-            {
-                validations.AddOrUpdate(new ValidationResult("WeatherMakerScript is present in the scene", ValidationResult.Level.OK));
-            } else
-            {
-                validations.AddOrUpdate(new ValidationResult("WeatherMakerScript must be present in the root of your scene", ValidationResult.Level.Error, Configure));
-            }
-
-            return validations;
-        }
-
-        void Configure()
-        {
-            GameObject prefab = (GameObject)Resources.Load("WeatherMakerPrefab", typeof(GameObject));
-            Instantiate(prefab);
         }
 
         internal override void InitializeCamera()

@@ -1,7 +1,7 @@
 ﻿using DigitalRuby.WeatherMaker;
 using UnityEngine;
 
-namespace wizardscode.environment.weather
+namespace wizardscode.environment.weathermaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerWeatherProfile", menuName = "Wizards Code/Weather/Weather Maker")]
     public class WeatherMakerWeatherProfile : AbstractWeatherProfile
