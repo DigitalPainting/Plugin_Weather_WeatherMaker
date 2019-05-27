@@ -36,9 +36,6 @@ namespace wizardscode.environment.weathermaker
         internal override void Initialize()
         {
             RenderSettings.fog = false;
-            RenderSettings.skybox = skyboxMaterial;
-
-
         }
 
         internal override void Start()

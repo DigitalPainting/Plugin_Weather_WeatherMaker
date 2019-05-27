@@ -1,11 +1,6 @@
 ﻿using DigitalRuby.WeatherMaker;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using wizardscode.editor;
-using wizardscode.plugin;
-using wizardscode.utility;
 
 namespace wizardscode.environment.weathermaker
 {
@@ -55,23 +50,10 @@ namespace wizardscode.environment.weathermaker
         internal override void InitializeLighting()
         {
             RenderSettings.fog = false;
-            RenderSettings.skybox = skybox;
         }
 
         internal override void InitializeSun()
         {
-            GameObject go = GameObject.Find("Sun");
-            if (go == null)
-            {
-                go = Instantiate(sunPrefab.gameObject);
-                go.name = "Sun";
-            }
-
-            Sun = go.GetComponent<Light>();
-            if (Sun == null)
-            {
-                Debug.LogError("Cannot find the sun, you need to set a prefab in the WeatherMakerDayNightCycleConfig. There is a suitable prefab in the prefabs folder of the WeatherMakerDayNightCycle plugin,");
-            }
         }
 
         internal override void InitializeTiming()
