@@ -8,7 +8,7 @@ using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
-    public class ValidateWeatherMakerDayNight : ValidationTest<DayNightPluginManager>
+    public class ValidateWeatherMakerDayNight : ValidateSimpleDayNightProfile
     {
         public override ValidationTest<DayNightPluginManager> Instance => new ValidateWeatherMakerDayNight();
 
