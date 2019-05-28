@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using wizardscode.utility;
+using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
     public class ValidateWeatherMakerDayNight : ValidationTest<DayNightPluginManager>
     {
-        const string PLUGIN_KEY = "Day Night Plugin";
-        const string WEATHER_MAKER_SCRIPT_KEY = PLUGIN_KEY + " (Weather Maker)";
+        public override ValidationTest<DayNightPluginManager> Instance => new ValidateWeatherMakerDayNight();
+
+        internal override string ProfileType { get { return "WeatherMakerDayNightProfile"; } }
+
         private DayNightPluginManager m_dayNightManager;
 
         private DayNightPluginManager DayNightManager

@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using wizardscode.utility;
+using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
     public class ValidateWeatherMakerWeather : ValidationTest<WeatherPluginManager>
     {
-        const string PLUGIN_KEY = "Weather Plugin";
-        const string WEATHER_MAKER_SCRIPT_KEY = PLUGIN_KEY + " (Weather Maker)";
-        const string WEATHER_MAKER_CAMERA_KEY = PLUGIN_KEY + " Camera";
-        const string WEATHER_MAKER_LIGHTING_KEY = PLUGIN_KEY + " Lighting";
 
+        public override ValidationTest<WeatherPluginManager> Instance => new ValidateWeatherMakerWeather();
+
+        internal override string ProfileType { get { return "WeatherMakerWeatherProfile"; } }
+        
         private WeatherPluginManager m_weatherManager;
 
         private WeatherPluginManager WeatherManager
