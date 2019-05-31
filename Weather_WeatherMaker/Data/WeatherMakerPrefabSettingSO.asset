@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acda151d167b714f91b23bef00a1aa0, type: 3}
+  m_Name: WeatherMakerPrefabSettingSO
+  m_EditorClassIdentifier: 
+  Description: Wehather Maker prefab containing all the necessary components to make
+    the system work.
+  Nullable: 0
+  AddToScene: 0
+  SuggestedValue: {fileID: 114189907102477492, guid: 66bd18e21212b8c4ab51a96f918b3197,
+    type: 3}

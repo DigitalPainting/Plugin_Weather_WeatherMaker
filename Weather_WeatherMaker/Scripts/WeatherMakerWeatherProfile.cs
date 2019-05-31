@@ -1,12 +1,32 @@
 ﻿using DigitalRuby.WeatherMaker;
 using UnityEngine;
+using wizardscode.editor;
+using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerWeatherProfile", menuName = "Wizards Code/Weather/Weather Maker")]
     public class WeatherMakerWeatherProfile : AbstractWeatherProfile
     {
-        [Header("Base Profiles for Weather Maker")]
+        [Header("Weather Maker Configuration")]
+        [Tooltip("Weather Maker Prefab containing all the necessary components.")]
+        [Expandable(isRequired: true, "Must provide a value for the Weather Maker prefab.")]
+        public WeatherMakerPrefabSettingSO WeatherMakerPrefab;
+        [Tooltip("Camera configured to display weather effects.")]
+        [Expandable(isRequired: true, "Must provide a value for the Weather Maker camera prefab.")]
+        public CameraSettingSO Camera;
+        [Tooltip("Reflection mode to ensure weather effects correctly affecting lighting.")]
+        [Expandable(isRequired: true, "Must provide a value for the Weather Maker reflection mode setting.")]
+        public ReflectionModeSettingSO ReflectionMode;
+        [Tooltip("Shadow rendering distance.")]
+        [Expandable(isRequired: true, "Must provide a value for the shadow distance setting.")]
+        public ShadowDistanceSettingSO ShadowDistance;
+        [Tooltip("Color space for the Unity Player.")]
+        [Expandable(isRequired: true, "Must provide a value for the color space setting.")]
+        public ColorSpaceSettingSO ColorSpace;
+
+
+        [Header("Base Profiles")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
         public WeatherMakerProfileGroupScript automatedGroupProfile;
         [Tooltip("Profile for a clear weather.")]
