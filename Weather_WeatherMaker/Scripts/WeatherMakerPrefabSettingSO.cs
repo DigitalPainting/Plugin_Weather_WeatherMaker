@@ -20,7 +20,17 @@ namespace wizardscode.validation
 
         protected override WeatherMakerScript ActualValue
         {
-            get { return GetFirstInstanceInScene().GetComponent<WeatherMakerScript>(); }
+            get {
+                GameObject instance = GetFirstInstanceInScene();
+                if (instance)
+                {
+                    return instance.GetComponent<WeatherMakerScript>();
+                }
+                else
+                {
+                    return null;
+                }
+            }
             set => throw new NotImplementedException();
         }
     }

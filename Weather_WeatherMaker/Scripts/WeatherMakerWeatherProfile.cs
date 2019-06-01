@@ -22,6 +22,9 @@ namespace wizardscode.environment.weathermaker
         [Expandable(isRequired: true, "Must provide a value for the shadow distance setting.")]
         public ShadowDistanceSettingSO ShadowDistance;
         [Tooltip("Color space for the Unity Player.")]
+        [Expandable(isRequired: true)]
+        public ScreenSpaceShadowSettingSO ScreenSpaceShadows;
+        [Tooltip("Color space for the Unity Player.")]
         [Expandable(isRequired: true, "Must provide a value for the color space setting.")]
         public ColorSpaceSettingSO ColorSpace;
 
