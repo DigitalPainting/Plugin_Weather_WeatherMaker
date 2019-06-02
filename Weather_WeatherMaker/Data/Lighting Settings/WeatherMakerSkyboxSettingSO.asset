@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ada3c359911aa469bbf1eff43f6e10, type: 3}
   m_Name: WeatherMakerSkyboxSettingSO
   m_EditorClassIdentifier: 
-  Description: Skybox for use with Digital Ruby's Weather Maker asset
+  SettingName: Skybox
   Nullable: 0
   AddToScene: 0
+  valueClassName: RenderSettings
+  valueName: skybox
   SuggestedValue: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664a6284826a91a48bad4797f9a9490e, type: 3}
   m_Name: ColorSpaceSettingSO
   m_EditorClassIdentifier: 
-  Description: The Unity player color space to use when rendering.
+  SettingName: Color Space
   Nullable: 0
   AddToScene: 0
+  valueClassName: PlayerSettings
+  valueName: colorSpace
   SuggestedValue: 1

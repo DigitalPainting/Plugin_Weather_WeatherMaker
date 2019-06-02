@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3acda151d167b714f91b23bef00a1aa0, type: 3}
   m_Name: WeatherMakerPrefabSettingSO
   m_EditorClassIdentifier: 
+  SettingName: Weather Maker Prefab
   Description: Weather Maker prefab containing all the necessary components to make
     the system work.
   Nullable: 0
   AddToScene: 1
+  valueClassName: 
+  valueName: 
   SuggestedValue: {fileID: 114189907102477492, guid: d8e81c6995614c3478ad5ccd3c744307,
     type: 3}

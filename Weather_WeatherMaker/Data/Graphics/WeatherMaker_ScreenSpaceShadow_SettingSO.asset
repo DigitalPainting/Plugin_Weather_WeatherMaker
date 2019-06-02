@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: WeatherMakerScreenSpaceShadowSettingSO
+  m_Name: WeatherMaker_ScreenSpaceShadow_SettingSO
   m_EditorClassIdentifier: Assembly-CSharp:wizardscode.validation:ScreenSpaceShadowSettingSO
-  Description: The Screen Space Shadow mode.
+  SettingName: Screen Space Shadow Mode
   Nullable: 0
   AddToScene: 0
+  valueClassName: 
+  valueName: 
   SuggestedValue: 1

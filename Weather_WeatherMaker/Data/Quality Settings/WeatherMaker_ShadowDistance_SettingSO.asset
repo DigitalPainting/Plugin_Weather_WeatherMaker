@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b060c8739dbd5a946b4f29288594e436, type: 3}
-  m_Name: WeatherMakerShadowDistanceSettingSO
+  m_Script: {fileID: 11500000, guid: 3cc3a260c8d31d747a6ba485076f3b48, type: 3}
+  m_Name: WeatherMaker_ShadowDistance_SettingSO
   m_EditorClassIdentifier: 
-  Description: The distance to which shadows should be rendered.
+  SettingName: Shadow Distance
   Nullable: 0
   AddToScene: 0
+  valueClassName: QualitySettings
+  valueName: shadowDistance
   SuggestedValue: 500

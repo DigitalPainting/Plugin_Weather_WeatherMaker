@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51f66a27a9aa8b47aa1564a544793d5, type: 3}
   m_Name: WeatherMakerReflectionModeSettingSO
   m_EditorClassIdentifier: 
-  Description: The environmental reflection mode.
+  SettingName: Reflection Mode
   Nullable: 0
   AddToScene: 0
+  valueClassName: RenderSettings
+  valueName: defaultReflectionMode
   SuggestedValue: 1

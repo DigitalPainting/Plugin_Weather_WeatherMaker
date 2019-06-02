@@ -13,7 +13,7 @@ namespace wizardscode.environment.weathermaker
 
         public override ValidationTest<WeatherPluginManager> Instance => new ValidateWeatherMakerWeather();
 
-        internal override string ProfileType { get { return "WeatherMakerWeatherProfile"; } }
+        internal override string ProfileType { get { return "Weather_WeatherMaker_Profile"; } }
         
         private WeatherPluginManager m_weatherManager;
 

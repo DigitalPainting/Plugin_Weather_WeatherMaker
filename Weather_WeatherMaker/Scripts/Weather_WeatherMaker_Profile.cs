@@ -5,8 +5,8 @@ using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
-    [CreateAssetMenu(fileName = "WeatherMakerWeatherProfile", menuName = "Wizards Code/Weather/Weather Maker")]
-    public class WeatherMakerWeatherProfile : AbstractWeatherProfile
+    [CreateAssetMenu(fileName = "Weather_WeatherMaker_Profile", menuName = "Wizards Code/Plugin/Weather/Weather Maker")]
+    public class Weather_WeatherMaker_Profile : AbstractWeatherProfile
     {
         [Header("Weather Maker Configuration")]
         [Tooltip("Weather Maker Prefab containing all the necessary components.")]
@@ -20,7 +20,7 @@ namespace wizardscode.environment.weathermaker
         public ReflectionModeSettingSO ReflectionMode;
         [Tooltip("Shadow rendering distance.")]
         [Expandable(isRequired: true, "Must provide a value for the shadow distance setting.")]
-        public ShadowDistanceSettingSO ShadowDistance;
+        public FloatSettingSO ShadowDistance;
         [Tooltip("Color space for the Unity Player.")]
         [Expandable(isRequired: true)]
         public ScreenSpaceShadowSettingSO ScreenSpaceShadows;

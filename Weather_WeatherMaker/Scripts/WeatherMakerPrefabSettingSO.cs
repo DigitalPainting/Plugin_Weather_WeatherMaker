@@ -16,8 +16,6 @@ namespace wizardscode.validation
             get { return "Instance"; }
         }
 
-        public override string SettingName { get { return "Weather Maker Prefab"; } }
-
         protected override WeatherMakerScript ActualValue
         {
             get {

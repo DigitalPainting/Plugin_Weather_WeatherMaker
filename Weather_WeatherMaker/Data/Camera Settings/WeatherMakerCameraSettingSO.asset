@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b20923541385ce4ebe4d7df708c2ea5, type: 3}
   m_Name: WeatherMakerCameraSettingSO
   m_EditorClassIdentifier: 
-  Description: A prefab to use as the main camera in the scene.
+  SettingName: Camera
   Nullable: 0
   AddToScene: 1
+  valueClassName: 
+  valueName: 
   SuggestedValue: {fileID: 20734418272137298, guid: 9ef0907d022a3d944b14397983c7fa58,
     type: 3}
