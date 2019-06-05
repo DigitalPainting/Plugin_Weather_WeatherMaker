@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:wizardscode.validation:ScreenSpaceShadowSettingSO
   SettingName: Screen Space Shadow Mode
   Nullable: 0
-  AddToScene: 0
+  m_suggestedValue: 2
   valueClassName: 
   valueName: 
-  SuggestedValue: 1

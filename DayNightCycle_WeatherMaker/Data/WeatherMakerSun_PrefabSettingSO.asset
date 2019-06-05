@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b20923541385ce4ebe4d7df708c2ea5, type: 3}
-  m_Name: WeatherMakerCameraSettingSO
+  m_Script: {fileID: 11500000, guid: e30612029f71a8e4d8cee30d3b90c5bc, type: 3}
+  m_Name: WeatherMakerSun_PrefabSettingSO
   m_EditorClassIdentifier: 
-  SettingName: Camera
+  SettingName: Sun Game Object
   Nullable: 0
-  AddToScene: 1
-  valueClassName: 
-  valueName: 
-  SuggestedValue: {fileID: 20734418272137298, guid: 9ef0907d022a3d944b14397983c7fa58,
+  m_suggestedValue: {fileID: 1217404932698064, guid: 935ed1b2f6a62904888782218dd03f07,
     type: 3}
+  AddToScene: 1

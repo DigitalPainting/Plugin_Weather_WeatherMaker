@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SettingName: Color Space
   Nullable: 0
-  AddToScene: 0
+  m_suggestedValue: 1
   valueClassName: PlayerSettings
   valueName: colorSpace
-  SuggestedValue: 1

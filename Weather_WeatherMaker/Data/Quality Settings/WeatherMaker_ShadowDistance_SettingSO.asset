@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SettingName: Shadow Distance
   Nullable: 0
-  AddToScene: 0
+  m_suggestedValue: 500
   valueClassName: QualitySettings
   valueName: shadowDistance
-  SuggestedValue: 500

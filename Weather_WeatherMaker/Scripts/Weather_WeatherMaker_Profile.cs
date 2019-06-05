@@ -14,7 +14,7 @@ namespace wizardscode.environment.weathermaker
         public WeatherMakerPrefabSettingSO WeatherMakerPrefab;
         [Tooltip("Camera configured to display weather effects.")]
         [Expandable(isRequired: true, "Must provide a value for the Weather Maker camera prefab.")]
-        public CameraSettingSO Camera;
+        public PrefabSettingSO Camera;
         [Tooltip("Reflection mode to ensure weather effects correctly affecting lighting.")]
         [Expandable(isRequired: true, "Must provide a value for the Weather Maker reflection mode setting.")]
         public ReflectionModeSettingSO ReflectionMode;

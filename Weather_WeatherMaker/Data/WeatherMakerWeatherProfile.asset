@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Skybox: {fileID: 11400000, guid: 7dcbeb36cfe0e6540b881e997329363c, type: 2}
   WeatherMakerPrefab: {fileID: 11400000, guid: 987edeb1539e7654e85ce67a14cb6f28, type: 2}
-  Camera: {fileID: 11400000, guid: 755c765599db042479ae06496bd00f48, type: 2}
+  Camera: {fileID: 11400000, guid: e478ba7d5c9a30543a206be9fa717f96, type: 2}
   ReflectionMode: {fileID: 11400000, guid: f848e321fd3582449814a6f4ae652f96, type: 2}
   ShadowDistance: {fileID: 11400000, guid: 43dd5ecd2dd4d40428075e540bc2a7bc, type: 2}
   ScreenSpaceShadows: {fileID: 11400000, guid: 4760e9c00a618b04f97b62a6bd6065cb, type: 2}

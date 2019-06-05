@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: WeatherMakerPrefabSettingSO
   m_EditorClassIdentifier: 
   SettingName: Weather Maker Prefab
-  Description: Weather Maker prefab containing all the necessary components to make
-    the system work.
   Nullable: 0
-  AddToScene: 1
-  valueClassName: 
-  valueName: 
-  SuggestedValue: {fileID: 114189907102477492, guid: d8e81c6995614c3478ad5ccd3c744307,
+  m_suggestedValue: {fileID: 1289281111498416, guid: 66bd18e21212b8c4ab51a96f918b3197,
     type: 3}
+  AddToScene: 1

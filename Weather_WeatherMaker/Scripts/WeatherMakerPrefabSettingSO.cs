@@ -9,20 +9,15 @@ using wizardscode.environment;
 namespace wizardscode.validation
 {
     [CreateAssetMenu(fileName = "WeatherMakerPrefabSettingSO", menuName = "Wizards Code/Validation/Weather Maker/Prefab Setting")]
-    public class WeatherMakerPrefabSettingSO : GenericSettingSO<WeatherMakerScript>
+    public class WeatherMakerPrefabSettingSO : PrefabSettingSO
     {
-        public override string TestName
-        {
-            get { return "Instance"; }
-        }
-
-        protected override WeatherMakerScript ActualValue
+        /*
+        protected override UnityEngine.Object ActualValue
         {
             get {
-                GameObject instance = GetFirstInstanceInScene();
-                if (instance)
+                if (Instance)
                 {
-                    return instance.GetComponent<WeatherMakerScript>();
+                    return ((GameObject)Instance).GetComponent<WeatherMakerScript>();
                 }
                 else
                 {
@@ -31,5 +26,6 @@ namespace wizardscode.validation
             }
             set => throw new NotImplementedException();
         }
+        */
     }
 }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: WeatherMakerDayNightProfile
   m_EditorClassIdentifier: 
   Skybox: {fileID: 11400000, guid: 7dcbeb36cfe0e6540b881e997329363c, type: 2}
-  SunPrefab: {fileID: 11400000, guid: 3d8441ea63f3ffb4fa73c8d0b599773b, type: 2}
-  startTime: 18000
+  SunPrefab: {fileID: 11400000, guid: 564c35b24db761e4392f2fa01222bee4, type: 2}
+  SunSource: {fileID: 11400000, guid: c999808859af10641a61b69ce6549209, type: 2}
+  startTime: 18004.2
   dayCycleInMinutes: 1
   weatherMakerProfile: {fileID: 11400000, guid: 49e3956622eccc1429c4eb5f4ca1ab52,
     type: 2}

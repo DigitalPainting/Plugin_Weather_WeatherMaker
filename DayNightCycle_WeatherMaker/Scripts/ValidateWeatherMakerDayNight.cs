@@ -14,18 +14,5 @@ namespace wizardscode.environment.weathermaker
 
         internal override string ProfileType { get { return "WeatherMakerDayNightProfile"; } }
 
-        private DayNightPluginManager m_dayNightManager;
-
-        private DayNightPluginManager DayNightManager
-        {
-            get
-            {
-                if (m_dayNightManager == null)
-                {
-                    m_dayNightManager = GameObject.FindObjectOfType<DayNightPluginManager>(); ;
-                }
-                return m_dayNightManager;
-            }
-        }
     }
 }
