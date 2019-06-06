@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0
   NightSpeed: 0
-  UpdateInterval: 0.03
+  UpdateInterval: 0
   TimeOfDay: 42564
   TimeOfDayLabel: 11:49 AM
   Year: 2017

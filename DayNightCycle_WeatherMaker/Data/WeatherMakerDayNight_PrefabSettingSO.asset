@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30612029f71a8e4d8cee30d3b90c5bc, type: 3}
-  m_Name: WeatherMakerSun_PrefabSettingSO
+  m_Script: {fileID: 11500000, guid: 3acda151d167b714f91b23bef00a1aa0, type: 3}
+  m_Name: WeatherMakerDayNight_PrefabSettingSO
   m_EditorClassIdentifier: 
-  SettingName: Sun Game Object
+  SettingName: Weather Maker Prefab
   Nullable: 0
-  m_suggestedValue: {fileID: 1217404932698064, guid: 935ed1b2f6a62904888782218dd03f07,
+  m_suggestedValue: {fileID: 1266370253000555597, guid: 6eab864988d2f6c409da5974cc332ef3,
     type: 3}
   AddToScene: 1

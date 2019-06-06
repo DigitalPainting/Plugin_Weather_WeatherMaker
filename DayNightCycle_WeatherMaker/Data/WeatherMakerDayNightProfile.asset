@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Skybox: {fileID: 11400000, guid: 7dcbeb36cfe0e6540b881e997329363c, type: 2}
   SunPrefab: {fileID: 0}
+  SunSource: {fileID: 11400000, guid: c999808859af10641a61b69ce6549209, type: 2}
   startTime: 18000
   dayCycleInMinutes: 5
+  weatherMakerPrefab: {fileID: 11400000, guid: a13128f12dad0e14380ad9931150cfe3, type: 2}
   weatherMakerProfile: {fileID: 11400000, guid: 49e3956622eccc1429c4eb5f4ca1ab52,
     type: 2}
+  cameraPrefab: {fileID: 11400000, guid: e478ba7d5c9a30543a206be9fa717f96, type: 2}
+  reflectionMode: {fileID: 11400000, guid: f848e321fd3582449814a6f4ae652f96, type: 2}

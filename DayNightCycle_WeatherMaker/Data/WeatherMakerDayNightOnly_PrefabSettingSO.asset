@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51f66a27a9aa8b47aa1564a544793d5, type: 3}
-  m_Name: WeatherMakerReflectionModeSettingSO
+  m_Script: {fileID: 11500000, guid: 3acda151d167b714f91b23bef00a1aa0, type: 3}
+  m_Name: WeatherMakerDayNightOnly_PrefabSettingSO
   m_EditorClassIdentifier: 
-  SettingName: Reflection Mode
+  SettingName: Weather Maker Prefab
   Nullable: 0
-  AddToScene: 0
-  valueClassName: RenderSettings
-  valueName: defaultReflectionMode
-  SuggestedValue: 1
+  m_suggestedValue: {fileID: 1266370253000555597, guid: 6eab864988d2f6c409da5974cc332ef3,
+    type: 3}
+  AddToScene: 1

@@ -1,16 +1,30 @@
 ﻿using DigitalRuby.WeatherMaker;
 using UnityEngine;
 using wizardscode.editor;
+using wizardscode.validation;
 
 namespace wizardscode.environment.weathermaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerDayNightCycleConfig", menuName = "Wizards Code/Day Night Cycle/Weather Maker Day Night Cycle Config")]
     public class WeatherMakerDayNightProfile : AbstractDayNightProfile
     {
-        [Header("Configuration")]
+        [Header("Weather Maker")]
+        [Tooltip("The Weather Maker prefab to add to the scene.")]
+        [Expandable(isRequired: true)]
+        public PrefabSettingSO weatherMakerPrefab;
+
         [Tooltip("The Weather Maker Profile to use")]
         [Expandable(isRequired: true, isRequiredMessage: "Select or create a weather maker profile.")]
         public WeatherMakerDayNightCycleProfileScript weatherMakerProfile;
+
+        [Tooltip("Camera that allows the moon and starts to shine through.")]
+        [Expandable(isRequired: true)]
+        public PrefabSettingSO cameraPrefab;
+
+        [Header("Lighting")]
+        [Tooltip("Camera that allows the moon and starts to shine through.")]
+        [Expandable(isRequired: true)]
+        public ReflectionModeSettingSO reflectionMode;
 
         private GameObject weatherMakerScript;
         private GameObject dayNight;
