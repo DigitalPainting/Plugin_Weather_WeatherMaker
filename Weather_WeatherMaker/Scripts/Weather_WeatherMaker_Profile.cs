@@ -8,26 +8,32 @@ namespace wizardscode.environment.weathermaker
     [CreateAssetMenu(fileName = "Weather_WeatherMaker_Profile", menuName = "Wizards Code/Plugin/Weather/Weather Maker")]
     public class Weather_WeatherMaker_Profile : AbstractWeatherProfile
     {
-        [Header("Weather Maker Configuration")]
+        [Header("Weather Maker")]
         [Tooltip("Weather Maker Prefab containing all the necessary components.")]
         [Expandable(isRequired: true, "Must provide a value for the Weather Maker prefab.")]
         public WeatherMakerPrefabSettingSO WeatherMakerPrefab;
+
         [Tooltip("Camera configured to display weather effects.")]
         [Expandable(isRequired: true, "Must provide a value for the Weather Maker camera prefab.")]
-        public PrefabSettingSO Camera;
+        public PrefabSettingSO cameraPrefab;
+
+        [Header("Lighting")]
         [Tooltip("Reflection mode to ensure weather effects correctly affecting lighting.")]
         [Expandable(isRequired: true, "Must provide a value for the Weather Maker reflection mode setting.")]
         public ReflectionModeSettingSO ReflectionMode;
-        [Tooltip("Shadow rendering distance.")]
-        [Expandable(isRequired: true, "Must provide a value for the shadow distance setting.")]
-        public FloatSettingSO ShadowDistance;
-        [Tooltip("Color space for the Unity Player.")]
-        [Expandable(isRequired: true)]
-        public ScreenSpaceShadowSettingSO ScreenSpaceShadows;
+
         [Tooltip("Color space for the Unity Player.")]
         [Expandable(isRequired: true, "Must provide a value for the color space setting.")]
         public ColorSpaceSettingSO ColorSpace;
 
+        [Header("Graphics")]
+        [Tooltip("Shadow rendering distance.")]
+        [Expandable(isRequired: true, "Must provide a value for the shadow distance setting.")]
+        public FloatSettingSO ShadowDistance;
+
+        [Tooltip("Color space for the Unity Player.")]
+        [Expandable(isRequired: true)]
+        public ScreenSpaceShadowSettingSO ScreenSpaceShadows;
 
         [Header("Base Profiles")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
