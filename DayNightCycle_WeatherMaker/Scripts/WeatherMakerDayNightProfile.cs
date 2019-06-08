@@ -76,7 +76,7 @@ namespace wizardscode.environment.weathermaker
             daySpeed = 1440 / dayCycleInMinutes;
             WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
             nightSpeed = daySpeed; // don't currently support separate day and night speeds
-            WeatherMakerDayNightCycleManagerScript.Instance.Speed = nightSpeed;
+            WeatherMakerDayNightCycleManagerScript.Instance.NightSpeed = nightSpeed;
 
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile.UpdateFromProfile(true);

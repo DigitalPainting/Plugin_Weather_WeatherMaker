@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4dbdbf04c6ebf4ab9bbaaea3ca6638, type: 3}
   m_Name: WeatherMakerDayNightCycleProfile_DigitalPainting
   m_EditorClassIdentifier: 
-  Speed: 1440
-  NightSpeed: 1440
+  Speed: 0
+  NightSpeed: 0
   UpdateInterval: 0
-  TimeOfDay: 45963.875
-  TimeOfDayLabel: 12:44 PM
+  TimeOfDay: 36417.625
+  TimeOfDayLabel: 10:06 AM
   Year: 2017
   Month: 3
-  Day: 13
+  Day: 15
   AdjustDateWhenDayEnds: 1
   TimeZoneOffsetSeconds: -21600
   Latitude: 44
