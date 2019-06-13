@@ -33,7 +33,7 @@ namespace wizardscode.environment.weathermaker
 
         [Tooltip("Color space for the Unity Player.")]
         [Expandable(isRequired: true)]
-        public ScreenSpaceShadowSettingSO ScreenSpaceShadows;
+        public ScreenSpaceShadowsSettingSO ScreenSpaceShadows;
 
         [Header("Base Profiles")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
