@@ -1,4 +1,5 @@
 ﻿using DigitalRuby.WeatherMaker;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -13,7 +14,7 @@ namespace wizardscode.environment.weathermaker
 
         public override ValidationTest<WeatherPluginManager> Instance => new ValidateWeatherMakerWeather();
 
-        internal override string ProfileType { get { return "Weather_WeatherMaker_Profile"; } }
+        internal override Type ProfileType => typeof(Weather_WeatherMaker_Profile);
         
         private WeatherPluginManager m_weatherManager;
 

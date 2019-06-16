@@ -1,4 +1,5 @@
 ﻿using DigitalRuby.WeatherMaker;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -12,7 +13,7 @@ namespace wizardscode.environment.weathermaker
     {
         public override ValidationTest<DayNightPluginManager> Instance => new ValidateWeatherMakerDayNight();
 
-        internal override string ProfileType { get { return "WeatherMakerDayNightProfile"; } }
+        internal override Type ProfileType => typeof(WeatherMakerDayNightProfile);
 
     }
 }
