@@ -4,16 +4,19 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28f4fb0832d64c84b9aaf5fe0c2d2427, type: 3}
-  m_Name: WeatherMakerProfile_Rain
+  m_Name: WeatherMakerProfile_Hail_Default
   m_EditorClassIdentifier: 
   Disabled: 0
   CloudProfile: {fileID: 11400000, guid: f1d10c517d7643142a86c9e83fc11033, type: 2}
-  PrecipitationProfile: {fileID: 11400000, guid: 06fc1266ad6c44a4d954eb37c411f367,
+  SkyProfile: {fileID: 0}
+  AuroraProfile: {fileID: 0}
+  PrecipitationProfile: {fileID: 11400000, guid: afb7f072fcf78334fa0582f9b2b4eb97,
     type: 2}
   FogProfile: {fileID: 11400000, guid: f4cd03fe6f4e8fd46b3976431b218da4, type: 2}
   WindProfile: {fileID: 11400000, guid: b909d78e53a779d4c886eb7c908009ea, type: 2}

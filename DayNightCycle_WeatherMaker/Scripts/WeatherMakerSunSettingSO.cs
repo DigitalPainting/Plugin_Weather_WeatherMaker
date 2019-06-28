@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using wizardscode.plugin;
 
 namespace wizardscode.validation
 {
@@ -14,9 +15,9 @@ namespace wizardscode.validation
             RenderSettings.sun = GetFirstInstanceInScene().GetComponent<Light>();
         }
 
-        internal override ValidationResult ValidateSetting(Type validationTest)
+        internal override ValidationResult ValidateSetting(Type validationTest, AbstractPluginManager pluginManager)
         {
-            ValidationResult result = base.ValidateSetting(validationTest);
+            ValidationResult result = base.ValidateSetting(validationTest, pluginManager);
 
             if (result.impact != ValidationResult.Level.OK)
             {
@@ -27,14 +28,14 @@ namespace wizardscode.validation
             if (sun.GetComponent<WeatherMakerCelestialObjectScript>() == null)
             {
                 ResolutionCallback callback = new ResolutionCallback(ConfigureSunAsCelestialObject);
-                result = GetErrorResult(TestName, "The sun does not have the celestial object component attached.", validationTest.Name);
+                result = GetErrorResult(TestName, pluginManager, "The sun does not have the celestial object component attached.", validationTest.Name);
                 List<ResolutionCallback> callbacks = new List<ResolutionCallback>();
                 callbacks.Add(callback);
                 result.Callbacks = callbacks;
                 return result; 
             }
 
-            return GetPassResult(TestName, validationTest.Name);
+            return GetPassResult(TestName, pluginManager, validationTest.Name);
         }
 
         private void ConfigureSunAsCelestialObject()

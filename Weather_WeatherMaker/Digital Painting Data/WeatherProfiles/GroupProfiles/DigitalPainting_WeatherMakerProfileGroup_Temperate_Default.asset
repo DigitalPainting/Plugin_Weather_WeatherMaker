@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d07c51bcd33344d895e123737a8c85, type: 3}
-  m_Name: DigitalPainting_WeatherMakerProfileGroup_Temperate
+  m_Name: DigitalPainting_WeatherMakerProfileGroup_Temperate_Default
   m_EditorClassIdentifier: 
   Disabled: 0
   Profiles:

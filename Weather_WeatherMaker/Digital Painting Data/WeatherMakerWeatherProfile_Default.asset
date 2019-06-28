@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb272ebb3827ac047babf7e66e18f8e9, type: 3}
-  m_Name: WeatherMakerWeatherProfile
+  m_Name: WeatherMakerWeatherProfile_Default
   m_EditorClassIdentifier: 
   Skybox: {fileID: 11400000, guid: 7dcbeb36cfe0e6540b881e997329363c, type: 2}
   WeatherMakerPrefab: {fileID: 11400000, guid: 987edeb1539e7654e85ce67a14cb6f28, type: 2}

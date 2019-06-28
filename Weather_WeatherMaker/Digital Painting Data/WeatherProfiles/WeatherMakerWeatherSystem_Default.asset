@@ -4,16 +4,21 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb272ebb3827ac047babf7e66e18f8e9, type: 3}
-  m_Name: WeatherMakerWeatherSystem
+  m_Name: WeatherMakerWeatherSystem_Default
   m_EditorClassIdentifier: 
-  skyboxMaterial: {fileID: 2100000, guid: e4dc109382c6b184b93d16deadf82698, type: 2}
-  WeatherMakerScriptPrefab: {fileID: 1562172912819060, guid: 49f221c70ee583246a9e8375a90a7d74,
-    type: 2}
+  Skybox: {fileID: 0}
+  WeatherMakerPrefab: {fileID: 0}
+  cameraPrefab: {fileID: 0}
+  ReflectionMode: {fileID: 0}
+  ColorSpace: {fileID: 0}
+  ShadowDistance: {fileID: 0}
+  ScreenSpaceShadows: {fileID: 0}
   automatedGroupProfile: {fileID: 11400000, guid: 926503a315dbbfa46b363ceb1366ca70,
     type: 2}
   clearProfile: {fileID: 11400000, guid: 5735a14d9dca55d4a8a67186abe9bf2a, type: 2}

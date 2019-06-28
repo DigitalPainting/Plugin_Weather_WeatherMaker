@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3acda151d167b714f91b23bef00a1aa0, type: 3}
-  m_Name: WeatherMakerDayNight_PrefabSettingSO
+  m_Name: WeatherMakerDayNight_PrefabSettingSO_Default
   m_EditorClassIdentifier: 
   SettingName: Weather Maker Prefab
   Nullable: 0
   m_suggestedValue: {fileID: 1266370253000555597, guid: 6eab864988d2f6c409da5974cc332ef3,
     type: 3}
   AddToScene: 1
+  spawnPosition: {x: 0, y: 0, z: 0}
