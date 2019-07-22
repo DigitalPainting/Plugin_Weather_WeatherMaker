@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using wizardscode.environment.weathermaker;
+using WizardsCode.Environment.WeatherMaker;
 
-namespace wizardscode.plugin
+namespace WizardsCode.Plugin
 {
     public class WeatherMakerDayNightPluginDefinition : AbstractDayNightPluginDefinition
     {

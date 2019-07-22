@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace wizardscode.plugin
+namespace WizardsCode.Plugin
 {
     public class WeatherMakerWeatherPluginDefinition : AbstractWeatherPluginDefinition
     {

@@ -1,13 +1,8 @@
-﻿using DigitalRuby.WeatherMaker;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System;
 using UnityEngine;
-using wizardscode.utility;
-using wizardscode.validation;
+using WizardsCode.Validation;
 
-namespace wizardscode.environment.weathermaker
+namespace WizardsCode.Environment.WeatherMaker
 {
     public class ValidateWeatherMakerWeather : ValidationTest<WeatherPluginManager>
     {

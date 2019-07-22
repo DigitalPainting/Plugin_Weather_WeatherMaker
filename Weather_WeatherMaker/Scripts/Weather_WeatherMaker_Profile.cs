@@ -1,9 +1,11 @@
-﻿using DigitalRuby.WeatherMaker;
+﻿#if WEATHER_MAKER_PRESENT
+using DigitalRuby.WeatherMaker;
+#endif
 using UnityEngine;
-using wizardscode.editor;
-using wizardscode.validation;
+using WizardsCode.Editor;
+using WizardsCode.Validation;
 
-namespace wizardscode.environment.weathermaker
+namespace WizardsCode.Environment.WeatherMaker
 {
     [CreateAssetMenu(fileName = "Weather_WeatherMaker_Profile", menuName = "Wizards Code/Plugin/Weather/Weather Maker")]
     public class Weather_WeatherMaker_Profile : AbstractWeatherProfile
@@ -35,6 +37,7 @@ namespace wizardscode.environment.weathermaker
         [Expandable(isRequired: true)]
         public ScreenSpaceShadowsSettingSO ScreenSpaceShadows;
 
+#if WEATHER_MAKER_PRESENT
         [Header("Base Profiles")]
         [Tooltip("Automated weather profile. If this is null then either manual or manager controlled weather is used. If this has a profile then it will override all other settings.")]
         public WeatherMakerProfileGroupScript automatedGroupProfile;
@@ -49,18 +52,20 @@ namespace wizardscode.environment.weathermaker
         [Tooltip("Profile for hail.")]
         public WeatherMakerProfileScript hailProfile;
 
-        private WeatherPluginManager manager;
-        private GameObject weatherMaker;
         private WeatherMakerWeatherZoneScript zone;
-
-        private GameObject weather;
-        private float timeToNextUpdate;
-        private DayNightPluginManager dayNightManager;
 
         public WeatherMakerProfileScript CurrentWeatherMakerProfile
         {
             get; set;
         }
+#endif
+        
+        private WeatherPluginManager manager;
+        private GameObject weatherMaker;
+
+        private GameObject weather;
+        private float timeToNextUpdate;
+        private DayNightPluginManager dayNightManager;
 
         internal override void Initialize()
         {
@@ -75,6 +80,7 @@ namespace wizardscode.environment.weathermaker
                 Debug.LogError("Cannot find Weather Manager.");
             }
 
+#if WEATHER_MAKER_PRESENT
             zone = FindObjectOfType<WeatherMakerWeatherZoneScript>();
             if (zone == null)
             {
@@ -127,12 +133,15 @@ namespace wizardscode.environment.weathermaker
             weatherMaker.SetActive(true);
 
             WeatherMakerScript.Instance.RaiseWeatherProfileChanged(null, clearProfile, 1, 20, true, null);
+#endif
         }
+
 
         internal override void Update()
         {
             if (CurrentProfile.isDirty)
             {
+#if WEATHER_MAKER_PRESENT
                 switch (CurrentProfile.PrecipitationType)
                 {
                     case WeatherProfile.PrecipitationTypeEnum.Clear:
@@ -159,11 +168,12 @@ namespace wizardscode.environment.weathermaker
                         ChangeWeather(clearProfile);
                         break;
                 }
-
+#endif
                 CurrentProfile.isDirty = false;
             }
         }
 
+#if WEATHER_MAKER_PRESENT
         private void ChangeWeather(WeatherMakerProfileScript newProfile)
         {
             if (WeatherMakerScript.Instance == null)
@@ -177,5 +187,6 @@ namespace wizardscode.environment.weathermaker
                 WeatherMakerScript.Instance.RaiseWeatherProfileChanged(lastProfile, newProfile, 20, UnityEngine.Random.value * 20 + 10, true, null);
             }
         }
+#endif
     }
 }

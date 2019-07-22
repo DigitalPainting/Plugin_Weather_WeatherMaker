@@ -1,10 +1,12 @@
-﻿using DigitalRuby.WeatherMaker;
+﻿#if WEATHER_MAKER_PRESENT
+using DigitalRuby.WeatherMaker;
+#endif
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using wizardscode.plugin;
+using WizardsCode.Plugin;
 
-namespace wizardscode.validation
+namespace WizardsCode.Validation
 {
     [CreateAssetMenu(fileName = "WeatherMakerSunSettingSO", menuName = "Wizards Code/Validation/Weather Maker/Sun Prefab")]
     public class WeatherMakerSunSettingsSO : SunSettingSO
@@ -25,6 +27,7 @@ namespace wizardscode.validation
             }
 
             GameObject sun = GetFirstInstanceInScene();
+#if WEATHER_MAKER_PRESENT
             if (sun.GetComponent<WeatherMakerCelestialObjectScript>() == null)
             {
                 ResolutionCallback callback = new ResolutionCallback(ConfigureSunAsCelestialObject);
@@ -34,6 +37,7 @@ namespace wizardscode.validation
                 result.Callbacks = callbacks;
                 return result; 
             }
+#endif
 
             return GetPassResult(TestName, pluginManager, validationTest.Name);
         }
@@ -41,8 +45,10 @@ namespace wizardscode.validation
         private void ConfigureSunAsCelestialObject()
         {
             GameObject sun = GetFirstInstanceInScene();
+#if WEATHER_MAKER_PRESENT
             WeatherMakerCelestialObjectScript celestial = sun.AddComponent<WeatherMakerCelestialObjectScript>();
             celestial.IsSun = true;
+#endif
         }
     }
 }

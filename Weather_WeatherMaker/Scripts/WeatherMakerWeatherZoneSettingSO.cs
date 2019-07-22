@@ -1,7 +1,8 @@
-﻿using DigitalRuby.WeatherMaker;
+﻿#if WEATHER_MAKER_PRESENT
+using DigitalRuby.WeatherMaker;
 using UnityEngine;
 
-namespace wizardscode.validation
+namespace WizardsCode.Validation
 {
     [CreateAssetMenu(fileName = "WeatherMakerWeatherZoneSettingSO", menuName = "Wizards Code/Validation/Weather Maker/Weather Zone Setting")]
     public class WeatherMakerWeatherZoneSettingSO : GenericSettingSO<WeatherMakerWeatherZoneScript>
@@ -13,3 +14,4 @@ namespace wizardscode.validation
         }
     }
 }
+#endif

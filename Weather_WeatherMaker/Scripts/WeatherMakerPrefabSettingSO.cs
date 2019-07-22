@@ -1,12 +1,6 @@
-﻿using DigitalRuby.WeatherMaker;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using wizardscode.environment;
+﻿using UnityEngine;
 
-namespace wizardscode.validation
+namespace WizardsCode.Validation
 {
     [CreateAssetMenu(fileName = "WeatherMakerPrefabSettingSO", menuName = "Wizards Code/Validation/Weather Maker/Prefab Setting")]
     public class WeatherMakerPrefabSettingSO : PrefabSettingSO

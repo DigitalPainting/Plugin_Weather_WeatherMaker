@@ -1,13 +1,7 @@
-﻿using DigitalRuby.WeatherMaker;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using wizardscode.utility;
-using wizardscode.validation;
+﻿using System;
+using WizardsCode.Validation;
 
-namespace wizardscode.environment.weathermaker
+namespace WizardsCode.Environment.WeatherMaker
 {
     public class ValidateWeatherMakerDayNight : ValidateSimpleDayNightProfile
     {

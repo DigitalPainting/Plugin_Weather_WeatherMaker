@@ -1,9 +1,11 @@
-﻿using DigitalRuby.WeatherMaker;
+﻿#if WEATHER_MAKER_PRESENT
+using DigitalRuby.WeatherMaker;
+#endif
 using UnityEngine;
-using wizardscode.editor;
-using wizardscode.validation;
+using WizardsCode.Editor;
+using WizardsCode.Validation;
 
-namespace wizardscode.environment.weathermaker
+namespace WizardsCode.Environment.WeatherMaker
 {
     [CreateAssetMenu(fileName = "WeatherMakerDayNightCycleConfig", menuName = "Wizards Code/Day Night Cycle/Weather Maker Day Night Cycle Config")]
     public class WeatherMakerDayNightProfile : AbstractDayNightProfile
@@ -13,9 +15,11 @@ namespace wizardscode.environment.weathermaker
         [Expandable(isRequired: true)]
         public PrefabSettingSO weatherMakerPrefab;
 
+#if WEATHER_MAKER_PRESENT
         [Tooltip("The Weather Maker Profile to use")]
         [Expandable(isRequired: true, isRequiredMessage: "Select or create a weather maker profile.")]
         public WeatherMakerDayNightCycleProfileScript weatherMakerProfile;
+#endif
 
         [Tooltip("Camera that allows the moon and starts to shine through.")]
         [Expandable(isRequired: true)]
@@ -33,6 +37,8 @@ namespace wizardscode.environment.weathermaker
 
         internal override void Initialize()
         {
+
+#if WEATHER_MAKER_PRESENT
             WeatherMakerScript component = GameObject.FindObjectOfType<WeatherMakerScript>();
             if ( component == null)
             {
@@ -53,7 +59,7 @@ namespace wizardscode.environment.weathermaker
             }            
 
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
-
+#endif
             base.Initialize();
         }
 
@@ -72,6 +78,7 @@ namespace wizardscode.environment.weathermaker
 
         internal override void InitializeTiming()
         {
+#if WEATHER_MAKER_PRESENT
             WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay = startTime;
             daySpeed = 1440 / dayCycleInMinutes;
             WeatherMakerDayNightCycleManagerScript.Instance.Speed = daySpeed;
@@ -80,22 +87,32 @@ namespace wizardscode.environment.weathermaker
 
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile = weatherMakerProfile;
             WeatherMakerDayNightCycleManagerScript.Instance.DayNightProfile.UpdateFromProfile(true);
+#endif
         }
 
         internal override void SetTime(float timeInSeconds)
         {
+#if WEATHER_MAKER_PRESENT
             WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay = timeInSeconds;
+#endif
         }
+
 
         internal override float GetTime()
         {
+#if WEATHER_MAKER_PRESENT
             return WeatherMakerDayNightCycleManagerScript.Instance.TimeOfDay;
+#else
+            return 0;
+#endif
         }
 
         internal override void Update()
         {
             daySpeed = 1440 / dayCycleInMinutes;
             nightSpeed = daySpeed; // don't currently support separate day and night speeds
+
+#if WEATHER_MAKER_PRESENT
             if (daySpeed != 1440 / dayCycleInMinutes)
             {
                 weatherMakerProfile.Speed = daySpeed;
@@ -107,6 +124,7 @@ namespace wizardscode.environment.weathermaker
                 weatherMakerProfile.NightSpeed = nightSpeed;
                 WeatherMakerDayNightCycleManagerScript.Instance.NightSpeed = nightSpeed;
             }
+#endif
         }
     }
 }
